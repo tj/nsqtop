@@ -1,7 +1,6 @@
 package nsqd
 
 import "encoding/json"
-import "io/ioutil"
 import "net/http"
 import "fmt"
 
@@ -25,18 +24,9 @@ func (n *NSQD) Stats() (*Stats, error) {
 	if err != nil {
 		return nil, err
 	}
-
 	defer req.Body.Close()
-	body, err := ioutil.ReadAll(req.Body)
-	if err != nil {
-		return nil, err
-	}
 
 	var s *stats
-	err = json.Unmarshal(body, &s)
-	if err != nil {
-		return nil, err
-	}
-
-	return s.Data, nil
+	err = json.NewDecoder(req.Body).Decode(&s)
+	return s.Data, err
 }
