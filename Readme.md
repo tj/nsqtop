@@ -5,6 +5,8 @@
 
 ## Installation
 
+ Via `go` or grab one of the [binaries](https://github.com/tj/nsqtop/releases).
+
 ```
 $ go get github.com/tj/nsqtop
 ```
