@@ -52,9 +52,9 @@ func loop(d time.Duration, addrs []string) {
 
 			fmt.Printf("\033[2J\033[0f")
 			fmt.Printf("\n\n\n\033[1m%30s\033[0m\n", addr)
-			fmt.Printf("%30s %15s %15s %15s %15s %15s\n", "topic", "channel", "depth", "in-flight", "deferred", "timeouts")
+			fmt.Printf("%30s %30s %15s %15s %15s %15s\n", "topic", "channel", "depth", "in-flight", "deferred", "timeouts")
 			for _, topic := range stats.Topics {
-				fmt.Printf("%30s %15s %15s %15s %15s %15s\n",
+				fmt.Printf("%30s %30s %15s %15s %15s %15s\n",
 					topic.Name,
 					"∙",
 					humanize.Comma(topic.Depth),
@@ -63,7 +63,7 @@ func loop(d time.Duration, addrs []string) {
 					humanize.Comma(topic.TimeoutCount))
 
 				for _, channel := range topic.Channels {
-					fmt.Printf("%30s %15s %15s %15s %15s %15s\n",
+					fmt.Printf("%30s %30s %15s %15s %15s %15s\n",
 						"∙",
 						channel.Name,
 						humanize.Comma(channel.Depth),
