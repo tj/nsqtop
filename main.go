@@ -51,7 +51,7 @@ func loop(d time.Duration, addrs []string) {
 			log.Check(err)
 
 			fmt.Printf("\033[2J\033[0f")
-			fmt.Printf("\n\033[1m%30s\033[0m\n", addr)
+			fmt.Printf("\n\n\n\033[1m%30s\033[0m\n", addr)
 			fmt.Printf("%30s %15s %15s %15s %15s %15s\n", "topic", "channel", "depth", "in-flight", "deferred", "timeouts")
 			for _, topic := range stats.Topics {
 				fmt.Printf("%30s %15s %15s %15s %15s %15s\n",
