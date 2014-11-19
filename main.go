@@ -10,7 +10,7 @@ import "io/ioutil"
 import "time"
 import "fmt"
 
-var Version = "0.0.1"
+var Version = "0.1.0"
 
 const Usage = `
   Usage:
